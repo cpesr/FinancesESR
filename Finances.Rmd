@@ -1,0 +1,174 @@
+---
+title: "RFC Finances"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(ggcpesrthemes)
+
+source("Finances.R")
+```
+
+Jeu de données :
+https://data.enseignementsup-recherche.gouv.fr/explore/dataset/fr-esr-operateurs-indicateurs-financiers/information/
+
+
+Problèmes détectés :
+
+- `CAF / Acquisitions d’immobilisations` dans le modèle mais absent des données
+- `Ressources.propres` dans les données, et `Ressources propres encaissables` dans le modèle
+- Nombreux `groupe` et `etablissement` vides
+
+## Tous les indicateurs aggrégés
+
+_Attention_ : 
+
+- Il s'agit d'un traitement global, et certaines aggrégation n'ont pas de sens. C'est le cas typiquement de la sommes de rapports (du type Ressources propres / Produits encaissable).
+- Il y a des changements de périmètre dans les données (des établissements entrant ou sortant du périmètre du MESRI, et des établissements changeant de groupe).
+
+
+```{r aggreg, fig.width=10, fig.height=60}
+fin.pivot.total %>%
+  ggplot(aes(x=exercice,y=Valeur,color=groupe)) +
+    geom_point(size=2) + geom_line(aes(group=groupe)) +
+    facet_wrap(Indicateur~Aggrégation, scales="free", ncol=2) +
+    theme_cpesr() +
+    theme(legend.direction="vertical")
+```
+
+## Tous les indicateurs aggrégés par groupe
+
+```{r aggreg.grp, fig.width=10, fig.height=60}
+fin.pivot.groupe %>% 
+  ggplot(aes(x=exercice,y=Valeur,color=groupe)) +
+    geom_point(size=2) + geom_line(aes(group=groupe)) +
+    facet_wrap(Indicateur~Aggrégation, scales="free", ncol=2) +
+    theme_cpesr() +
+    theme(legend.direction="vertical")
+```
+
+## Focus Résultat et Solde
+
+```{r focus, fig.width=8, fig.height=4.5}
+fin.pivot.groupe %>% 
+  filter(Indicateur %in% c("Résultat.net.comptable","Solde.budgétaire"), Aggrégation == "Somme") %>%
+  mutate(Valeur = Valeur / 10^6) %>%
+  ggplot(aes(x=exercice,y=Valeur,color=groupe)) +
+    geom_point(size=2) + geom_line(aes(group=groupe)) +
+    facet_wrap(Indicateur~., scales="free", ncol=1) +
+    ylab("Somme pour tous les établissements (M€)") +
+    theme_cpesr() +
+    theme(legend.position="right",legend.direction="vertical")
+```
+
+### Focus universités
+
+```{r focus.univ.data, fig.width=8, fig.height=4.5}
+fin.univ <- fin.pivot %>%
+  filter(groupe == "université") %>%
+  mutate(Valeur = Valeur / 10^6) %>%
+  filter(Indicateur %in% c("Résultat.net.comptable","Solde.budgétaire","Acquisitions.d.immobilisations")) %>%
+  filter(exercice %in% c("2019","2020")) %>%
+  arrange(exercice) %>%
+  group_by(Indicateur,etablissement) %>%
+  mutate(Différence = Valeur - first(Valeur)) %>%
+  filter(!academie %in% c("Guyane","Mayotte"))
+```
+
+```{r focus.univ.vs, fig.width=8, fig.height=4.5}
+  fin.univ %>%
+  filter(exercice == 2020) %>%
+  ggplot(aes(x=Valeur,y=Différence)) +
+    geom_point(size=2) +
+    geom_vline(xintercept = 0) +
+    geom_hline(yintercept = 0) +
+    facet_wrap(Indicateur~., scales="free", ncol=1) +
+    xlab("Valeur en 2020 (M€)") + 
+    ylab("Différence entre 2019 et 2020 (M€)") +
+    ggtitle("Différence entre 2019 et 2020 selon la valeur en 2020") +
+    theme_cpesr() +
+    theme(
+      panel.grid.major.x = element_line(colour = "grey", size=0.2),
+      legend.position="right",legend.direction="vertical")
+```
+
+```{r focus.univ.top, fig.width=10, fig.height=10}
+  fin.univ %>%
+  mutate(etablissement = droplevels(etablissement)) %>%
+  ggplot(aes(x=reorder(etablissement,-Différence,FUN=max),y=Valeur)) +
+    geom_hline(yintercept = 0, size=0.2) +
+    geom_line(aes(group=etablissement)) +
+    geom_point(aes(size=exercice,color=exercice)) + 
+    facet_grid(.~Indicateur, scales="free_x") +
+    coord_flip() +
+    scale_size_manual(values=c(1,2)) +
+    xlab("") + 
+    ylab("valeur (M€)") +
+    ggtitle("Résultat et solde des universités en 2019 et 2020") +
+    theme_cpesr() +
+    theme(
+      panel.grid.major.x = element_line(colour = "grey", size=0.2))
+```
+
+```{r focus.univ.diff.vs, fig.width=8, fig.height=7}
+  fin.univ %>%
+  select(-Valeur, -Catégorie) %>%
+  pivot_wider(
+    names_from = Indicateur,
+    values_from = Différence
+  ) %>%
+  mutate(etablissement = droplevels(etablissement)) %>%
+  ggplot(aes(x=Solde.budgétaire,y=Acquisitions.d.immobilisations)) +
+    geom_abline(slope=-1, size=0.3) +
+    geom_point() + 
+    #ggrepel::geom_text_repel(aes(label=etablissement)) +
+
+    ggtitle("Différences entre 2019 et 2020 pour les universités") +
+    theme_cpesr() +
+    theme(
+      panel.grid.major.x = element_line(colour = "grey", size=0.2))
+```
+
+## Tous les indicateurs par établissement
+
+
+```{r production.fun, include=FALSE, eval=TRUE}
+outmd <- function(x, ext=".md") {
+  x <- gsub("[^[:alnum:] ]", "_", x)
+  x <- gsub(" ", "_", x)
+  x <- tolower(x)
+  paste0(x,ext)
+}
+```
+
+```{r production, include=FALSE, eval=TRUE}
+
+etabs <- c("Université de Strasbourg")
+etabs <- unique(fin$etablissement)
+for(etab in etabs) {
+  rmarkdown::render("Etablissement.Rmd",
+                    output_file = outmd(etab),
+                    output_format=NULL,
+                    clean = TRUE)
+  unlink(paste0("Etablissements/",outmd(etab,"_files")),recursive=TRUE)
+  file.remove(outmd(etab,".html"))
+  file.rename(outmd(etab), paste0("Etablissements/",outmd(etab)))
+  file.rename(outmd(etab,"_files"), paste0("Etablissements/",outmd(etab,"_files")))
+}
+```
+
+
+
+```{r production2, results="asis"}
+for(grp in unique(fin$groupe)) {
+  cat("\n\n###", grp,"\n\n")
+  grpdf <- fin %>% filter(groupe == grp)
+  for(etab in unique(grpdf$etablissement)) {
+    cat("- [", etab,"](Etablissements/",outmd(etab),")\n", sep='')
+  }
+}
+```
+
+
