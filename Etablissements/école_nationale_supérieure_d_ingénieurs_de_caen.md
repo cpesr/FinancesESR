@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 29 rows containing missing values (geom_col).
+
     ## Warning: Removed 19 rows containing missing values (geom_point).
 
 ![](école_nationale_supérieure_d_ingénieurs_de_caen_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 302 rows containing missing values (geom_col).
 
     ## Warning: Removed 173 rows containing missing values (geom_point).
 

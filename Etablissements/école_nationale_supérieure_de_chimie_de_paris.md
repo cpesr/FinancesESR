@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 32 rows containing missing values (geom_col).
+
     ## Warning: Removed 21 rows containing missing values (geom_point).
 
 ![](école_nationale_supérieure_de_chimie_de_paris_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 370 rows containing missing values (geom_col).
 
     ## Warning: Removed 226 rows containing missing values (geom_point).
 

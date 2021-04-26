@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 29 rows containing missing values (geom_col).
+
     ## Warning: Removed 19 rows containing missing values (geom_point).
 
 ![](école_française_d_athènes_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 384 rows containing missing values (geom_col).
 
     ## Warning: Removed 269 rows containing missing values (geom_point).
 

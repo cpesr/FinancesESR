@@ -38,6 +38,22 @@ fin.pivot.total %>%
     theme(legend.direction="vertical")
 ```
 
+### Différences annuelles
+
+```{r aggreg.diff, fig.width=10, fig.height=60}
+fin.pivot.total %>%
+  group_by(Indicateur,Aggrégation,groupe) %>%
+  mutate(Différence.annuelle = Valeur - lag(Valeur)) %>%
+  ggplot(aes(x=exercice,y=Valeur,color=groupe)) +
+    geom_col(aes(y=Différence.annuelle,fill=groupe), color=NA, alpha=0.5) +
+    geom_point(size=2) + geom_line(aes(group=groupe)) +
+    scale_color_discrete(name="Valeur absolue") +
+    scale_fill_discrete(name="Différence annuelle") +  
+    facet_wrap(Indicateur~Aggrégation, scales="free", ncol=2) +
+    theme_cpesr() +
+    theme(legend.direction="vertical")
+```
+
 ## Tous les indicateurs aggrégés par groupe
 
 ```{r aggreg.grp, fig.width=10, fig.height=60}
@@ -49,11 +65,27 @@ fin.pivot.groupe %>%
     theme(legend.direction="vertical")
 ```
 
-## Focus Résultat et Solde
+### Différences annuelles
+
+```{r aggreg.grp.diff, fig.width=10, fig.height=60}
+fin.pivot.groupe %>%
+  group_by(Indicateur,Aggrégation,groupe) %>%
+  mutate(Différence.annuelle = Valeur - lag(Valeur)) %>%
+  ggplot(aes(x=exercice,y=Valeur,color=groupe)) +
+    geom_col(aes(y=Différence.annuelle,fill=groupe), position="dodge", color=NA, alpha=0.5) +
+    geom_point(size=2) + geom_line(aes(group=groupe)) +
+    scale_color_discrete(name="Valeur absolue") +
+    scale_fill_discrete(name="Différence annuelle") +
+    facet_wrap(Indicateur~Aggrégation, scales="free", ncol=2) +
+    theme_cpesr() +
+    theme(legend.direction="vertical")
+```
+
+## Focus sur quelques indicateurs
 
 ```{r focus, fig.width=8, fig.height=4.5}
 fin.pivot.groupe %>% 
-  filter(Indicateur %in% c("Résultat.net.comptable","Solde.budgétaire"), Aggrégation == "Somme") %>%
+  filter(Indicateur %in% c("Résultat.net.comptable","Solde.budgétaire","Acquisitions.d.immobilisations"), Aggrégation == "Somme") %>%
   mutate(Valeur = Valeur / 10^6) %>%
   ggplot(aes(x=exercice,y=Valeur,color=groupe)) +
     geom_point(size=2) + geom_line(aes(group=groupe)) +
@@ -62,6 +94,22 @@ fin.pivot.groupe %>%
     theme_cpesr() +
     theme(legend.position="right",legend.direction="vertical")
 ```
+
+### Différences annuelles
+
+```{r focus.diff, fig.width=8, fig.height=4.5}
+fin.pivot.groupe %>%
+    filter(Indicateur %in% c("Résultat.net.comptable","Solde.budgétaire","Acquisitions.d.immobilisations"), Aggrégation == "Somme") %>%
+  group_by(Indicateur,Aggrégation,groupe) %>%
+  mutate(Différence.annuelle = Valeur - lag(Valeur)) %>%
+  ggplot(aes(x=exercice,y=Différence.annuelle,color=groupe)) +
+    geom_col(aes(y=Différence.annuelle,fill=groupe), position="stack", color=NA, alpha=1) +
+    facet_wrap(Indicateur~., scales="free", ncol=1) +
+    ylab("Somme pour tous les établissements (M€)") +
+    theme_cpesr() +
+    theme(legend.position="right",legend.direction="vertical")
+```
+
 
 ### Focus universités
 
@@ -97,11 +145,13 @@ fin.univ <- fin.pivot %>%
 ```{r focus.univ.top, fig.width=10, fig.height=10}
   fin.univ %>%
   mutate(etablissement = droplevels(etablissement)) %>%
+  mutate(Indicateur = stringr::str_replace_all(Indicateur,"\\.",' ')) %>%
   ggplot(aes(x=reorder(etablissement,-Différence,FUN=max),y=Valeur)) +
     geom_hline(yintercept = 0, size=0.2) +
     geom_line(aes(group=etablissement)) +
     geom_point(aes(size=exercice,color=exercice)) + 
-    facet_grid(.~Indicateur, scales="free_x") +
+    facet_grid(.~Indicateur, scales="free_x",
+               labeller = labeller(Indicateur = label_wrap_gen(25))) +
     coord_flip() +
     scale_size_manual(values=c(1,2)) +
     xlab("") + 

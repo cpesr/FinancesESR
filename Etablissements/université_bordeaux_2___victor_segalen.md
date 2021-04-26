@@ -5,6 +5,8 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 27 rows containing missing values (geom_col).
+
     ## Warning: Removed 19 rows containing missing values (geom_point).
 
     ## Warning: Removed 4 row(s) containing missing values (geom_path).
@@ -12,6 +14,8 @@ Indicateurs financiers d’établissement
 ![](université_bordeaux_2___victor_segalen_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 240 rows containing missing values (geom_col).
 
     ## Warning: Removed 124 rows containing missing values (geom_point).
 

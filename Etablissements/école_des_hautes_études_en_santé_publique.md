@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 24 rows containing missing values (geom_col).
+
     ## Warning: Removed 15 rows containing missing values (geom_point).
 
 ![](école_des_hautes_études_en_santé_publique_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 289 rows containing missing values (geom_col).
 
     ## Warning: Removed 183 rows containing missing values (geom_point).
 

@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 35 rows containing missing values (geom_col).
+
     ## Warning: Removed 22 rows containing missing values (geom_point).
 
 ![](école_centrale_de_lille_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 334 rows containing missing values (geom_col).
 
     ## Warning: Removed 184 rows containing missing values (geom_point).
 

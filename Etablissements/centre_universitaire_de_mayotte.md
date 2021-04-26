@@ -5,6 +5,8 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 24 rows containing missing values (geom_col).
+
     ## Warning: Removed 15 rows containing missing values (geom_point).
 
     ## Warning: Removed 1 row(s) containing missing values (geom_path).
@@ -12,6 +14,8 @@ Indicateurs financiers d’établissement
 ![](centre_universitaire_de_mayotte_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 258 rows containing missing values (geom_col).
 
     ## Warning: Removed 143 rows containing missing values (geom_point).
 

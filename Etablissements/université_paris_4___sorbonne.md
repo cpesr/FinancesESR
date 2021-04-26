@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 28 rows containing missing values (geom_col).
+
     ## Warning: Removed 19 rows containing missing values (geom_point).
 
 ![](université_paris_4___sorbonne_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 276 rows containing missing values (geom_col).
 
     ## Warning: Removed 157 rows containing missing values (geom_point).
 

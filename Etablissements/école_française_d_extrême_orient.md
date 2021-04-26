@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 34 rows containing missing values (geom_col).
+
     ## Warning: Removed 24 rows containing missing values (geom_point).
 
 ![](école_française_d_extrême_orient_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 418 rows containing missing values (geom_col).
 
     ## Warning: Removed 308 rows containing missing values (geom_point).
 

@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 29 rows containing missing values (geom_col).
+
     ## Warning: Removed 19 rows containing missing values (geom_point).
 
 ![](institut_d_administration_des_entreprises_de_paris_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 332 rows containing missing values (geom_col).
 
     ## Warning: Removed 197 rows containing missing values (geom_point).
 

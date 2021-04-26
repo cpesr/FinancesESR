@@ -33,23 +33,32 @@ fin.all <- bind_rows(
 fin.all  %>%
   filter(Indicateur %in% c("Résultat.net.comptable","Solde.budgétaire","Acquisitions.d.immobilisations")) %>%
   mutate(Valeur = Valeur / 10^6) %>%
+  group_by(Indicateur,Aggrégation,groupe) %>%
+  mutate(Différence.annuelle = Valeur - lag(Valeur)) %>%
+  
   ggplot(aes(x=exercice,y=Valeur,color=etablissement)) +
+    geom_col(aes(y=Différence.annuelle,fill=etablissement), position="dodge", color=NA, alpha=0.5) +
     geom_point(size=2) + geom_line(aes(group=etablissement)) +
-    scale_color_brewer(palette="Purples", name="") +
+    scale_color_brewer(palette="Purples", name="Valeur absolue") +
+    scale_fill_brewer(palette="Purples", name="Différence annuelle") +
     facet_wrap(Indicateur~., scales="free", ncol=1) +
     ggtitle(paste0("Indicateurs financiers de ",etab)) + 
-    theme_cpesr() 
-    #theme(legend.direction="vertical", legend.position = "right")
+    theme_cpesr() +
+    theme(legend.direction="vertical", legend.position = "right")
 ```
 
 ## Tous les indicateurs
 
 ```{r etab, fig.width=10, fig.height=30}
 fin.all %>% 
+  group_by(Indicateur,Aggrégation,groupe) %>%
+  mutate(Différence.annuelle = Valeur - lag(Valeur)) %>%
   ggplot(aes(x=exercice,y=Valeur,color=etablissement)) +
-  geom_point(size=2) + geom_line(aes(group=etablissement)) +
-  scale_color_brewer(palette="Purples") +
-  facet_wrap(Indicateur~., scales="free", ncol=2) +
-  theme_cpesr() +
-  theme(legend.direction="vertical")
+    geom_col(aes(y=Différence.annuelle,fill=etablissement), position="dodge", color=NA, alpha=0.5) +
+    geom_point(size=2) + geom_line(aes(group=etablissement)) +
+    scale_color_brewer(palette="Purples", name="Valeur absolue") +
+    scale_fill_brewer(palette="Purples", name="Différence annuelle") +
+    facet_wrap(Indicateur~., scales="free", ncol=2) +
+    theme_cpesr() +
+    theme(legend.direction="vertical")
 ```

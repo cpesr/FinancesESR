@@ -5,6 +5,8 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 29 rows containing missing values (geom_col).
+
     ## Warning: Removed 20 rows containing missing values (geom_point).
 
     ## Warning: Removed 1 row(s) containing missing values (geom_path).
@@ -12,6 +14,8 @@ Indicateurs financiers d’établissement
 ![](institut_national_des_sciences_appliquées_de_lyon_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 325 rows containing missing values (geom_col).
 
     ## Warning: Removed 196 rows containing missing values (geom_point).
 

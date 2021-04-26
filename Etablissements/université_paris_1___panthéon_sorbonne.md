@@ -5,6 +5,8 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 33 rows containing missing values (geom_col).
+
     ## Warning: Removed 24 rows containing missing values (geom_point).
 
     ## Warning: Removed 2 row(s) containing missing values (geom_path).
@@ -12,6 +14,8 @@ Indicateurs financiers d’établissement
 ![](université_paris_1___panthéon_sorbonne_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 366 rows containing missing values (geom_col).
 
     ## Warning: Removed 236 rows containing missing values (geom_point).
 

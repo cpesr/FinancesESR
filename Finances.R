@@ -22,6 +22,8 @@ categories <- read.csv("indicateurs-financiers-categories.csv")
 levels.indicateurs <- categories$Indicateur
 levels.categories <- unique(categories$Catégorie)
 
+
+
 fin.pivot <- fin %>%
   pivot_longer(
     cols = Acquisitions.d.immobilisations:Valorisation,
@@ -33,6 +35,7 @@ fin.pivot <- fin %>%
     Indicateur = factor(Indicateur,levels.indicateurs),
     Catégorie = factor(Catégorie,levels.categories)) %>%
   arrange(etablissement,Catégorie,Indicateur,exercice)
+  
 
 
 fin.pivot.groupe <- fin.pivot %>%
@@ -114,10 +117,12 @@ fin.pivot.total <- fin.pivot %>%
         Aggrégation = "Somme"
         )
   ) %>%
-  mutate(Valeur = na_if(Valeur,0)) %>%
+  
   mutate(groupe="Global", etablissement="Global") %>%
+  mutate(Valeur = na_if(Valeur,0)) %>%
   mutate(
     Indicateur = factor(Indicateur,levels.indicateurs),
     Catégorie = factor(Catégorie,levels.categories)) %>%
   arrange(etablissement,Catégorie,Indicateur,exercice)
+  
 

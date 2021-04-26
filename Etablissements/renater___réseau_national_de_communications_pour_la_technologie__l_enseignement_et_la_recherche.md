@@ -5,6 +5,8 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 24 rows containing missing values (geom_col).
+
     ## Warning: Removed 15 rows containing missing values (geom_point).
 
     ## Warning: Removed 1 row(s) containing missing values (geom_path).
@@ -12,6 +14,8 @@ Indicateurs financiers d’établissement
 ![](renater___réseau_national_de_communications_pour_la_technologie__l_enseignement_et_la_recherche_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 271 rows containing missing values (geom_col).
 
     ## Warning: Removed 159 rows containing missing values (geom_point).
 

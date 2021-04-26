@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 34 rows containing missing values (geom_col).
+
     ## Warning: Removed 22 rows containing missing values (geom_point).
 
 ![](école_centrale_de_nantes_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 376 rows containing missing values (geom_col).
 
     ## Warning: Removed 208 rows containing missing values (geom_point).
 

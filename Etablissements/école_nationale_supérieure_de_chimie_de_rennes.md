@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 27 rows containing missing values (geom_col).
+
     ## Warning: Removed 18 rows containing missing values (geom_point).
 
 ![](école_nationale_supérieure_de_chimie_de_rennes_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 316 rows containing missing values (geom_col).
 
     ## Warning: Removed 187 rows containing missing values (geom_point).
 

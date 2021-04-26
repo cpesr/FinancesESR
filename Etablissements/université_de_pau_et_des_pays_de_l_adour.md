@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 29 rows containing missing values (geom_col).
+
     ## Warning: Removed 20 rows containing missing values (geom_point).
 
 ![](université_de_pau_et_des_pays_de_l_adour_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 298 rows containing missing values (geom_col).
 
     ## Warning: Removed 169 rows containing missing values (geom_point).
 

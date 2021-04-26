@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 28 rows containing missing values (geom_col).
+
     ## Warning: Removed 19 rows containing missing values (geom_point).
 
 ![](université_d_avignon_et_des_pays_de_vaucluse_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 294 rows containing missing values (geom_col).
 
     ## Warning: Removed 165 rows containing missing values (geom_point).
 

@@ -5,6 +5,8 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 21 rows containing missing values (geom_col).
+
     ## Warning: Removed 14 rows containing missing values (geom_point).
 
     ## Warning: Removed 2 row(s) containing missing values (geom_path).
@@ -12,6 +14,8 @@ Indicateurs financiers d’établissement
 ![](bulac___bibliothèque_universitaire_des_langues_et_civilisations_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 228 rows containing missing values (geom_col).
 
     ## Warning: Removed 119 rows containing missing values (geom_point).
 

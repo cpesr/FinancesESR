@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 31 rows containing missing values (geom_col).
+
     ## Warning: Removed 20 rows containing missing values (geom_point).
 
 ![](école_nationale_supérieure_de_mécanique_et_des_microtechniques_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 314 rows containing missing values (geom_col).
 
     ## Warning: Removed 181 rows containing missing values (geom_point).
 

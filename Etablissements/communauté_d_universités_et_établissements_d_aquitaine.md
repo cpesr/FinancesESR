@@ -5,6 +5,8 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 18 rows containing missing values (geom_col).
+
     ## Warning: Removed 9 rows containing missing values (geom_point).
 
     ## Warning: Removed 1 row(s) containing missing values (geom_path).
@@ -12,6 +14,8 @@ Indicateurs financiers d’établissement
 ![](communauté_d_universités_et_établissements_d_aquitaine_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 267 rows containing missing values (geom_col).
 
     ## Warning: Removed 174 rows containing missing values (geom_point).
 

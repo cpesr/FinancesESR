@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 35 rows containing missing values (geom_col).
+
     ## Warning: Removed 24 rows containing missing values (geom_point).
 
 ![](université_de_toulouse_3___paul_sabatier_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 357 rows containing missing values (geom_col).
 
     ## Warning: Removed 204 rows containing missing values (geom_point).
 

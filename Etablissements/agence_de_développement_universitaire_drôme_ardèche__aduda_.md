@@ -5,6 +5,8 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 23 rows containing missing values (geom_col).
+
     ## Warning: Removed 16 rows containing missing values (geom_point).
 
     ## Warning: Removed 4 row(s) containing missing values (geom_path).
@@ -12,6 +14,8 @@ Indicateurs financiers d’établissement
 ![](agence_de_développement_universitaire_drôme_ardèche__aduda__files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 238 rows containing missing values (geom_col).
 
     ## Warning: Removed 130 rows containing missing values (geom_point).
 

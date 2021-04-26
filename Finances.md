@@ -29,17 +29,39 @@ Problèmes détectés :
 
 ![](Finances_files/figure-gfm/aggreg-1.png)<!-- -->
 
+### Différences annuelles
+
+    ## Warning: Removed 196 rows containing missing values (position_stack).
+
+    ## Warning: Removed 110 rows containing missing values (geom_point).
+
+![](Finances_files/figure-gfm/aggreg.diff-1.png)<!-- -->
+
 ## Tous les indicateurs aggrégés par groupe
 
     ## Warning: Removed 860 rows containing missing values (geom_point).
 
 ![](Finances_files/figure-gfm/aggreg.grp-1.png)<!-- -->
 
-## Focus Résultat et Solde
+### Différences annuelles
+
+    ## Warning: Removed 1416 rows containing missing values (geom_col).
+
+    ## Warning: Removed 860 rows containing missing values (geom_point).
+
+![](Finances_files/figure-gfm/aggreg.grp.diff-1.png)<!-- -->
+
+## Focus sur quelques indicateurs
 
     ## Warning: Removed 36 rows containing missing values (geom_point).
 
 ![](Finances_files/figure-gfm/focus-1.png)<!-- -->
+
+### Différences annuelles
+
+    ## Warning: Removed 57 rows containing missing values (position_stack).
+
+![](Finances_files/figure-gfm/focus.diff-1.png)<!-- -->
 
 ### Focus universités
 

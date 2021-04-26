@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 31 rows containing missing values (geom_col).
+
     ## Warning: Removed 21 rows containing missing values (geom_point).
 
 ![](université_de_caen_normandie_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 298 rows containing missing values (geom_col).
 
     ## Warning: Removed 168 rows containing missing values (geom_point).
 

@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 35 rows containing missing values (geom_col).
+
     ## Warning: Removed 24 rows containing missing values (geom_point).
 
 ![](institut_national_des_langues_et_civilisations_orientales_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 358 rows containing missing values (geom_col).
 
     ## Warning: Removed 200 rows containing missing values (geom_point).
 

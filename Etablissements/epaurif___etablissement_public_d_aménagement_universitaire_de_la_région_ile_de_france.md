@@ -5,6 +5,8 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 21 rows containing missing values (geom_col).
+
     ## Warning: Removed 13 rows containing missing values (geom_point).
 
     ## Warning: Removed 1 row(s) containing missing values (geom_path).
@@ -12,6 +14,8 @@ Indicateurs financiers d’établissement
 ![](epaurif___etablissement_public_d_aménagement_universitaire_de_la_région_ile_de_france_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 228 rows containing missing values (geom_col).
 
     ## Warning: Removed 118 rows containing missing values (geom_point).
 

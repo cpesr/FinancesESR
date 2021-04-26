@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 18 rows containing missing values (geom_col).
+
     ## Warning: Removed 9 rows containing missing values (geom_point).
 
 ![](hautes_études_sorbonne_arts_et_métiers_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 259 rows containing missing values (geom_col).
 
     ## Warning: Removed 166 rows containing missing values (geom_point).
 

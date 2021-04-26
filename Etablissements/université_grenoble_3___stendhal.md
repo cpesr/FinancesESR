@@ -5,6 +5,8 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 26 rows containing missing values (geom_col).
+
     ## Warning: Removed 18 rows containing missing values (geom_point).
 
     ## Warning: Removed 6 row(s) containing missing values (geom_path).
@@ -12,6 +14,8 @@ Indicateurs financiers d’établissement
 ![](université_grenoble_3___stendhal_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 273 rows containing missing values (geom_col).
 
     ## Warning: Removed 157 rows containing missing values (geom_point).
 

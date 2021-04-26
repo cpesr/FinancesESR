@@ -5,11 +5,15 @@ Indicateurs financiers d’établissement
 
 ## Focus Résultat et Solde
 
+    ## Warning: Removed 27 rows containing missing values (geom_col).
+
     ## Warning: Removed 16 rows containing missing values (geom_point).
 
 ![](abes___agence_bibliographique_de_l_enseignement_supérieur_files/figure-gfm/etab.focus-1.png)<!-- -->
 
 ## Tous les indicateurs
+
+    ## Warning: Removed 315 rows containing missing values (geom_col).
 
     ## Warning: Removed 195 rows containing missing values (geom_point).
 
